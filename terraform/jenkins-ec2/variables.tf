@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "ap-south-1" # India- Mumbai
 }
 
+variable "availability_zone" {
+  description = "The availability zone to deploy resources"
+  type        = string
+  default     = "ap-south-1a"
+}
+
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
