@@ -1,3 +1,6 @@
-.*
-build
-node_modules
+.*                  # Exclude all hidden files and directories (e.g., .git, .env, .gitignore) 
+build               # Exclude the 'build' directory (if it exists)
+node_modules        # Exclude the 'node_modules' directory to avoid sending unnecessary files
+
+!.env               # Explicitly include the '.env' file (negates the exclusion by '.*')
+!dist               # Explicitly include the 'dist' directory (negates the exclusion by '.*')

@@ -46,7 +46,10 @@
     newgrp docker
     sudo chmod 777 /var/run/docker.sock
     ```
-    
+- Create a `.env` file for environment variables as it is excluded by `.gitignore`.
+
+- Update `.dockerignore` to include `.env` and `dist` for successful Docker builds.
+
 - Build and run your application using Docker containers:
     
     ```bash
