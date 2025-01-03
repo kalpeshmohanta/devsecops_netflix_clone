@@ -5,7 +5,6 @@ COPY ./package.json .
 COPY ./yarn.lock .
 RUN yarn install # Package Manager
 COPY . .
-RUN rm -rf .gitignore # Remove .gitignore file when using .env file
 # ARG TMDB_V3_API_KEY # Movie Database API Key passed as an argument while building the image
 # ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY} # Use for building the application if .env file is not present
 ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
