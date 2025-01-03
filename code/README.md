@@ -48,7 +48,7 @@
     ```
 - Create a `.env` file for environment variables as it is excluded by `.gitignore`.
 
-- Update `.dockerignore` to include `.env` and `dist` for successful Docker builds.
+- Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
 
 - Build and run your application using Docker containers:
     
