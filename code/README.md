@@ -61,7 +61,49 @@
     docker rmi -f netflix
     ```
 
-It will show an error cause you need API key
+- Set the Docker Container Restart Policy
+    ```bash 
+    # Use when creating the container:
+    docker run -d --restart unless-stopped <image_name>
+
+    # Use when update an existing container:
+    docker update --restart unless-stopped <container_name_or_id>
+    ```
+
+- Ensure Docker Service Starts on Boot
+    ```bash
+    # enabled by default, but you can verify
+    systemctl is-enabled docker
+
+    # If it’s not enabled, enable it with:
+    sudo systemctl enable docker
+    ```
+
+- Shut Down the Server Gracefully
+    ```bash
+    # ensure a clean shutdown:
+    sudo shutdown -h now
+    ```
+
+- Verify After Powering On
+    ```bash
+    docker ps
+    ```
+
+- Optional: (Use Docker Compose for Multi-Container Applications)
+    ```bash
+    # If you’re using Docker Compose, you can define the restart policy in your docker-compose.yml file:
+    version: '3'
+    services:
+        my_service:
+            image: my-image
+            restart: unless-stopped
+
+    # Then, start your services with:
+    docker-compose up -d         
+    ```    
+
+It will show an error cause you need API key. Get the API key add in `.env` or pass as argument during docker build process.
 
 **Step 4: Get the API Key:**
 
