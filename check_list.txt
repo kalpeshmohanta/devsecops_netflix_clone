@@ -1,0 +1,20 @@
+NETFLIX CLONE
+
+
+Task 1-
+
+1- install aws cli and config with aws account
+2- create instance for jenkins, sonarqube, trivy with following config:
+	aws region: ap-south-1
+	ami: ami-053b12d3152c0cc71 (ubuntu for ap-south-1)
+	ec2 name: netflix-jenkins
+	AMI: ubuntu
+	instance type: t2.large
+	key pair: aws_key_pair.pem (existing key pair)
+	vpc: kalpesh-vpc (create a separate vpc)
+	security group: - Allow SSH traffic form anywhere (0.0.0.0/0)
+					- Allow HTTPS traffic from the internet
+					- Allow HTTP traffic from the internet
+					- inbound rules: Allow port 22, 443, 80 from anywhere
+	configure sotarge: EBS volume: size: 30(GiB) volume type: gp2 delete on termination: yes
+	Allocate elastic IP to my ec2 instance "netflix-jenkins"
