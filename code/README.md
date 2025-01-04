@@ -100,7 +100,9 @@
     docker-compose up -d         
     ```    
 
+
 It will show an error cause you need API key. Get the API key add in `.env` or pass as argument during docker build process.
+
 **Step 4: Get the API Key:**
 
 - Open a web browser and navigate to TMDB (The Movie Database) website.
