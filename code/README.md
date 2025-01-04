@@ -33,8 +33,34 @@
     git clone https://github.com/N4si/DevSecOps-Project.git
     ```
     
+---
+It will show an error cause you need API key. Get the API key add in `.env` or pass as `argument` during docker build process.
 
-**Step 3: Install Docker and Run the App Using a Container:**
+**Step 3: Get the API Key:**
+
+- Open a web browser and navigate to TMDB (The Movie Database) website.
+- Click on "Login" and create an account.
+- Once logged in, go to your profile and select "Settings."
+- Click on "API" from the left-side panel.
+- Create a new API key by clicking "Create" and accepting the terms and conditions.
+- Provide the required basic details and click "Submit."
+- You will receive your TMDB API key.
+
+---
+- Create a `.env` file for environment variables as it is excluded by `.gitignore`.
+
+- Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
+
+`OR`
+
+Now recreate the Docker image with your api key as `argument`:
+```
+docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
+```
+---
+Update Inbound Rule to allow traffic for `app-port: 8081`
+
+**Step 4: Install Docker and Run the App Using a Container:**
 
 - Set up Docker on the EC2 instance:
     
@@ -99,32 +125,6 @@
     # Then, start your services with:
     docker-compose up -d         
     ```    
----
-It will show an error cause you need API key. Get the API key add in `.env` or pass as argument during docker build process.
-
-**Step 4: Get the API Key:**
-
-- Open a web browser and navigate to TMDB (The Movie Database) website.
-- Click on "Login" and create an account.
-- Once logged in, go to your profile and select "Settings."
-- Click on "API" from the left-side panel.
-- Create a new API key by clicking "Create" and accepting the terms and conditions.
-- Provide the required basic details and click "Submit."
-- You will receive your TMDB API key.
-
----
-- Create a `.env` file for environment variables as it is excluded by `.gitignore`.
-
-- Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
-
-`OR`
-
-Now recreate the Docker image with your api key as `argument`:
-```
-docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
-```
----
-Update Inbound Rule to allow traffic for `app-port: 8081`
 
 ## **Phase 2: Security**
 
