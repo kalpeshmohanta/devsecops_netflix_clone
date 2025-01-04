@@ -219,9 +219,9 @@ After adding sonar token
 
 Click on Apply and Save
 
-**The Configure System option** is used in Jenkins to configure different server
+**The Configure System option** is used in Jenkins to configure different server
 
-**Global Tool Configuration** is used to configure different tools that we install using Plugins
+**Global Tool Configuration** is used to configure different tools that we install using Plugins
 
 We will install a sonar scanner in the tools.
 
