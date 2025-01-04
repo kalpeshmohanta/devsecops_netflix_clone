@@ -124,7 +124,7 @@ Now recreate the Docker image with your api key as `argument`:
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
 ---
-Update Inbound Rule to allow traffic in `port: 8081`
+Update Inbound Rule to allow traffic for `app-port: 8081`
 
 ## **Phase 2: Security**
 
