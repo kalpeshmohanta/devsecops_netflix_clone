@@ -53,13 +53,13 @@ It will show an error cause you need API key. Get the API key add in `.env` or p
 
 `OR`
 
-Now recreate the Docker image with your api key as `argument`:
+Recreate the Docker image with your api key as `argument` during docker build process:
 ```
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
 ---
 Update Inbound Rule to allow traffic for `app-port: 8081`
-
+---
 **Step 4: Install Docker and Run the App Using a Container:**
 
 - Set up Docker on the EC2 instance:
