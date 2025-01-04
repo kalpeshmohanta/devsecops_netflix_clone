@@ -1,0 +1,10 @@
+# Order of Rules: Rules are processed top-down. First match determines inclusion/exclusion.
+# .env, dist, and .config are explicitly included before excluding all hidden files/directories.
+
+!.env               # Explicitly include the '.env' file (negates the exclusion by '.*')
+!dist               # Explicitly include the 'dist' directory (negates the exclusion by '.*')
+!.config            # Explicitly include the '.config' directory (negates the exclusion by '.*')
+!build              # Explicitly include the 'build' directory (negates the exclusion by '.*')
+
+.*                  # Exclude all hidden files and directories (e.g., .git, .env, .gitignore)
+node_modules        # Exclude the 'node_modules' directory to avoid sending unnecessary files
