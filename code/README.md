@@ -99,8 +99,7 @@
     # Then, start your services with:
     docker-compose up -d         
     ```    
-
-
+---
 It will show an error cause you need API key. Get the API key add in `.env` or pass as argument during docker build process.
 
 **Step 4: Get the API Key:**
@@ -113,7 +112,7 @@ It will show an error cause you need API key. Get the API key add in `.env` or p
 - Provide the required basic details and click "Submit."
 - You will receive your TMDB API key.
 
-
+---
 - Create a `.env` file for environment variables as it is excluded by `.gitignore`.
 
 - Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
