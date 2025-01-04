@@ -46,9 +46,6 @@
     newgrp docker
     sudo chmod 777 /var/run/docker.sock
     ```
-- Create a `.env` file for environment variables as it is excluded by `.gitignore`.
-
-- Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
 
 - Build and run your application using Docker containers:
     
@@ -104,7 +101,6 @@
     ```    
 
 It will show an error cause you need API key. Get the API key add in `.env` or pass as argument during docker build process.
-
 **Step 4: Get the API Key:**
 
 - Open a web browser and navigate to TMDB (The Movie Database) website.
@@ -115,7 +111,14 @@ It will show an error cause you need API key. Get the API key add in `.env` or p
 - Provide the required basic details and click "Submit."
 - You will receive your TMDB API key.
 
-Now recreate the Docker image with your api key:
+
+- Create a `.env` file for environment variables as it is excluded by `.gitignore`.
+
+- Update `.dockerignore` to include `.env` and `dist` as negate for successful Docker builds.
+
+`OR`
+
+Now recreate the Docker image with your api key as `argument`:
 ```
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```

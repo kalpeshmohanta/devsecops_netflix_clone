@@ -24,7 +24,7 @@ This project is a Netflix clone built with a focus on DevOps and security best p
 
 ### Usage
 
-- After setting up the infrastructure and running the application, you can access the Netflix clone via the provided URL or localhost.
+- After setting up the infrastructure and running the application, you can access the Netflix clone via the provided URL in Dockerfile or localhost.
 
 ### Acknowledgments
 
