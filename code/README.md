@@ -178,7 +178,7 @@ Update Inbound Rule to allow traffic for `app-port: 8081`
 
 1. **Install Jenkins for Automation:**
     - Install Jenkins on the EC2 instance to automate deployment:
-    Install Java
+    Jenkins Preprerequisite: Install Java
     
     ```bash
     sudo apt update
@@ -197,6 +197,7 @@ Update Inbound Rule to allow traffic for `app-port: 8081`
     sudo apt-get update
     sudo apt-get install jenkins
     sudo systemctl start jenkins
+    # Ensure Docker Service Starts on Boot
     sudo systemctl enable jenkins
     ```
     
