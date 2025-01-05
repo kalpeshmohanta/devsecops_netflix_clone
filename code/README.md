@@ -393,8 +393,8 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker tag netflix <DockerHub Username>/netflix:latest "
+                       sh "docker push <DockerHub Username>/netflix:latest "
                     }
                 }
             }
@@ -411,16 +411,17 @@ pipeline{
         }
     }
 }
+```
 
-
-If you get docker login failed errorr
+```sh
+#If you get docker login failed errorr
 
 sudo su
-sudo usermod -aG docker jenkins
-sudo systemctl restart jenkins
-
-
+sudo usermod -aG docker jenkins # Adds the Jenkins user to the Docker group
+sudo systemctl restart jenkins  # Restart Jenkins Server
 ```
+
+
 
 ## **Phase 4: Monitoring**
 
