@@ -41,6 +41,21 @@
 5. **Elastic IP**:
    - Allocate and associate an Elastic IP to the EC2 instance.
 
+6. **EC2 Instance for monitoring** 
+Using same VPC & Subnet from `Jenkins Instance`
+   - Name: `netflix-monitoring`.
+   - AMI: `ami-053b12d3152c0cc71` (Ubuntu).
+   - Instance Type: `t2.medium`.
+   - Key Pair: `aws_key_pair.pem`.
+   - Attach the created security group.
+   - Configure root block storage:
+     - Size: `20 GiB`.
+     - Volume Type: `gp2`.
+     - Enable Delete on Termination.
+
+5. **Elastic IP**:
+   - Allocate and associate an Elastic IP to the EC2 instance.
+
 ### Comments:
 - Use variables for parameters like region, instance type, and volume size for flexibility.
 - Ensure proper tagging for resources for better organization.
