@@ -134,13 +134,22 @@ Update Inbound Rule to allow traffic for `app-port: 8081`
         sonarqube
         ```
         docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
-        ```
-        
+        ```    
         
         To access: 
         
-        publicIP:9000 (by default username & password is admin)
-        
+        publicIP `sonar-port:9000` (by default username & password is admin)
+
+    - Set the Docker Container Restart Policy
+        ```bash 
+        # Use when creating the container:
+        docker run -d --restart unless-stopped <image_name>
+
+        # Use when update an existing container:
+        docker update --restart unless-stopped <container_name_or_id>
+        ```
+        ---
+
         To install Trivy:
         ```
         sudo apt-get install wget apt-transport-https gnupg lsb-release
@@ -150,11 +159,16 @@ Update Inbound Rule to allow traffic for `app-port: 8081`
         sudo apt-get install trivy        
         ```
         
-        to scan image using trivy
+        To scan image using trivy:
         ```
         trivy image <imageid>
         ```
         
+        To scan present Dir:
+        ```
+        # fs: filesystem
+        trivy fs .
+        ```
         
 2. **Integrate SonarQube and Configure:**
     - Integrate SonarQube with your CI/CD pipeline.
