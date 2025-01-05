@@ -430,7 +430,7 @@ pipeline{
 | **Custom Metrics**   | Supports custom metrics from applications.          | Focuses on predefined system metrics.         |
 | **Purpose**          | Centralized metric storage, querying, and alerting. | Exposes raw node metrics for Prometheus.      |
 
-1. **Install Prometheus and Grafana:**
+1. **Install Prometheus:**
 
    Set up Prometheus and Grafana to monitor your application.
 
@@ -629,120 +629,120 @@ pipeline{
    `http://<your-prometheus-ip>:9090/targets`
 
 
-### Grafana
+3. **Grafana**
 
-**Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
+    **Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
 
-**Step 1: Install Dependencies:**
+    **Step 1: Install Dependencies:**
 
-First, ensure that all necessary dependencies are installed:
+    First, ensure that all necessary dependencies are installed:
 
-```bash
-sudo apt-get update
-sudo apt-get install -y apt-transport-https software-properties-common
-```
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y apt-transport-https software-properties-common
+    ```
 
-**Step 2: Add the GPG Key:**
+    **Step 2: Add the GPG Key:**
 
-Add the GPG key for Grafana:
+    Add the GPG key for Grafana:
 
-```bash
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-```
+    ```bash
+    wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+    ```
 
-**Step 3: Add Grafana Repository:**
+    **Step 3: Add Grafana Repository:**
 
-Add the repository for Grafana stable releases:
+    Add the repository for Grafana stable releases:
 
-```bash
-echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
-```
+    ```bash
+    echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+    ```
 
-**Step 4: Update and Install Grafana:**
+    **Step 4: Update and Install Grafana:**
 
-Update the package list and install Grafana:
+    Update the package list and install Grafana:
 
-```bash
-sudo apt-get update
-sudo apt-get -y install grafana
-```
+    ```bash
+    sudo apt-get update
+    sudo apt-get -y install grafana
+    ```
 
-**Step 5: Enable and Start Grafana Service:**
+    **Step 5: Enable and Start Grafana Service:**
 
-To automatically start Grafana after a reboot, enable the service:
+    To automatically start Grafana after a reboot, enable the service:
 
-```bash
-sudo systemctl enable grafana-server
-```
+    ```bash
+    sudo systemctl enable grafana-server
+    ```
 
-Then, start Grafana:
+    Then, start Grafana:
 
-```bash
-sudo systemctl start grafana-server
-```
+    ```bash
+    sudo systemctl start grafana-server
+    ```
 
-**Step 6: Check Grafana Status:**
+    **Step 6: Check Grafana Status:**
 
-Verify the status of the Grafana service to ensure it's running correctly:
+    Verify the status of the Grafana service to ensure it's running correctly:
 
-```bash
-sudo systemctl status grafana-server
-```
+    ```bash
+    sudo systemctl status grafana-server
+    ```
 
-**Step 7: Access Grafana Web Interface:**
+    **Step 7: Access Grafana Web Interface:**
 
-Open a web browser and navigate to Grafana using your server's IP address. The default port for Grafana is 3000. For example:
+    Open a web browser and navigate to Grafana using your server's IP address. The default port for Grafana is 3000. For example:
 
-`http://<your-server-ip>:3000`
+    `http://<your-server-ip>:3000`
 
-You'll be prompted to log in to Grafana. The default username is "admin," and the default password is also "admin."
+    You'll be prompted to log in to Grafana. The default username is "admin," and the default password is also "admin."
 
-**Step 8: Change the Default Password:**
+    **Step 8: Change the Default Password:**
 
-When you log in for the first time, Grafana will prompt you to change the default password for security reasons. Follow the prompts to set a new password.
+    When you log in for the first time, Grafana will prompt you to change the default password for security reasons. Follow the prompts to set a new password.
 
-**Step 9: Add Prometheus Data Source:**
+    **Step 9: Add Prometheus Data Source:**
 
-To visualize metrics, you need to add a data source. Follow these steps:
+    To visualize metrics, you need to add a data source. Follow these steps:
 
-- Click on the gear icon (⚙️) in the left sidebar to open the "Configuration" menu.
+    - Click on the gear icon (⚙️) in the left sidebar to open the "Configuration" menu.
 
-- Select "Data Sources."
+    - Select "Data Sources."
 
-- Click on the "Add data source" button.
+    - Click on the "Add data source" button.
 
-- Choose "Prometheus" as the data source type.
+    - Choose "Prometheus" as the data source type.
 
-- In the "HTTP" section:
-  - Set the "URL" to `http://localhost:9090` (assuming Prometheus is running on the same server).
-  - Click the "Save & Test" button to ensure the data source is working.
+    - In the "HTTP" section:
+    - Set the "URL" to `http://localhost:9090` (assuming Prometheus is running on the same server).
+    - Click the "Save & Test" button to ensure the data source is working.
 
-**Step 10: Import a Dashboard:**
+    **Step 10: Import a Dashboard:**
 
-To make it easier to view metrics, you can import a pre-configured dashboard. Follow these steps:
+    To make it easier to view metrics, you can import a pre-configured dashboard. Follow these steps:
 
-- Click on the "+" (plus) icon in the left sidebar to open the "Create" menu.
+    - Click on the "+" (plus) icon in the left sidebar to open the "Create" menu.
 
-- Select "Dashboard."
+    - Select "Dashboard."
 
-- Click on the "Import" dashboard option.
+    - Click on the "Import" dashboard option.
 
-- Enter the dashboard code you want to import (e.g., code 1860).
+    - Enter the dashboard code you want to import (e.g., code 1860).
 
-- Click the "Load" button.
+    - Click the "Load" button.
 
-- Select the data source you added (Prometheus) from the dropdown.
+    - Select the data source you added (Prometheus) from the dropdown.
 
-- Click on the "Import" button.
+    - Click on the "Import" button.
 
-You should now have a Grafana dashboard set up to visualize metrics from Prometheus.
+    You should now have a Grafana dashboard set up to visualize metrics from Prometheus.
 
-Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
+    Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
 
-That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
+    That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
 
-2. **Configure Prometheus Plugin Integration:**
-    - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
+    2. **Configure Prometheus Plugin Integration:**
+        - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
 
 
 ## **Phase 5: Notification**
