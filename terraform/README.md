@@ -42,8 +42,8 @@
    - Allocate and associate an Elastic IP to the EC2 instance.
 
 6. **EC2 Instance for monitoring** 
-   ---
-   Using same VPC & Subnet from `Jenkins Instance`
+   
+   - Using same VPC & Subnet from `Jenkins Instance`
    ---
    - Name: `netflix-monitoring`.
    - AMI: `ami-053b12d3152c0cc71` (Ubuntu).
