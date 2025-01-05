@@ -597,6 +597,11 @@ pipeline{
 
    To configure Prometheus to scrape metrics from Node Exporter and Jenkins, you need to modify the `prometheus.yml` file. Here is an example `prometheus.yml` configuration for your setup:
 
+   **Location**
+   ```
+   cd /etc/prometheus
+   ```
+
    ```yaml
    global:
      scrape_interval: 15s
