@@ -639,6 +639,10 @@ pipeline{
 
    `http://<your-prometheus-ip>:9090/targets`
 
+   **OR**
+
+   `TAB: Status -> targets`
+
 
 4. **Grafana**
 
