@@ -525,8 +525,8 @@ pipeline{
    You can access Prometheus in a web browser using your server's IP and port 9090:
 
    `http://<your-server-ip>:9090`
-   ---
-   **Installing Node Exporter:**
+   
+2. **Installing Node Exporter:**
 
    Create a system user for Node Exporter and download Node Exporter:
 
@@ -589,7 +589,7 @@ pipeline{
 
    You can access Node Exporter metrics in Prometheus.
 
-2. **Configure Prometheus Plugin Integration:**
+3. **Configure Prometheus Plugin Integration:**
 
    Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
 
@@ -631,7 +631,7 @@ pipeline{
    `http://<your-prometheus-ip>:9090/targets`
 
 
-3. **Grafana**
+4. **Grafana**
 
     **Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
 
