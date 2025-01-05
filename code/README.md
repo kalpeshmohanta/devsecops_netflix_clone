@@ -165,7 +165,7 @@ Update Inbound Rule to allow traffic for `app-port: 8081`
         ```
         
         To scan present Dir:
-        ```
+        ```bash
         # fs: filesystem
         trivy fs .
         ```
