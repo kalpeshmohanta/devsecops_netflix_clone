@@ -586,7 +586,11 @@ pipeline{
    ```bash
    sudo systemctl status node_exporter
    ```
-
+   Default port for Node Exporter:
+   ```
+   #port
+   9100
+   ```
    You can access Node Exporter metrics in Prometheus.
 
 3. **Configure Prometheus Plugin Integration:**
