@@ -22,9 +22,14 @@ This project is a Netflix clone built with a focus on DevOps and security best p
 ### Installation
 
 1. **Terraform Setup**:
+---
+- Create `jenkins-ec2 1st`
+- Then, create `monitor-ec2 2nd`, as it uses same VPC & Subnet from `jenkins-ec2 from 1st`
+---
    - Navigate to the `terraform` directory.
    - Run `terraform init` to initialize the Terraform configuration.
    - Run `terraform apply` to create the infrastructure on AWS.
+   - Run `terraform destroy` to destroy all infrastructure on AWS which is created by Terraform
 
 2. **Code Setup**:
    - Navigate to the `code` directory.

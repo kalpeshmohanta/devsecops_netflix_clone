@@ -457,7 +457,7 @@ sudo systemctl restart jenkins
    Create a systemd unit configuration file for Prometheus:
 
    ```bash
-   sudo nano /etc/systemd/system/prometheus.service
+   sudo vim /etc/systemd/system/prometheus.service
    ```
 
    Add the following content to the `prometheus.service` file:
@@ -502,6 +502,8 @@ sudo systemctl restart jenkins
    Enable and start Prometheus:
 
    ```bash
+   # enabled by default, but you can verify
+   sudo systemctl is-enabled prometheus
    sudo systemctl enable prometheus
    sudo systemctl start prometheus
    ```
