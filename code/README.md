@@ -423,16 +423,15 @@ pipeline{
 
 ## **Phase 4: Monitoring**
 
-| **Feature**         | **Prometheus**                                      | **Node Exporter**                              |
-|----------------------|-----------------------------------------------------|-----------------------------------------------|
-| **Primary Role**     | Monitoring, alerting, and time-series database.     | Collects and exports system-level metrics.    |
-| **Data Collection**  | Scrapes metrics from exporters (like Node Exporter).| Gathers hardware and OS-level metrics.        |
-| **Custom Metrics**   | Supports custom metrics from applications.          | Focuses on predefined system metrics.         |
-| **Purpose**          | Centralized metric storage, querying, and alerting. | Exposes raw node metrics for Prometheus.      |
-
+| **Feature**         | **Prometheus**                                      | **Node Exporter**                              | **Grafana**                                   |
+|----------------------|-----------------------------------------------------|-----------------------------------------------|-----------------------------------------------|
+| **Primary Role**     | Monitoring, alerting, and time-series database.     | Collects and exports system-level metrics.    | Visualization and dashboarding tool.          |
+| **Data Collection**  | Scrapes metrics from exporters (like Node Exporter).| Gathers hardware and OS-level metrics.        | Does not collect data; visualizes data from sources like Prometheus. |
+| **Custom Metrics**   | Supports custom metrics from applications.          | Focuses on predefined system metrics.         | Can visualize any metrics from supported data sources. |
+| **Purpose**          | Centralized metric storage, querying, and alerting. | Exposes raw node metrics for Prometheus.      | Creates interactive dashboards for monitoring and analysis. |
 1. **Install Prometheus:**
 
-   Set up Prometheus and Grafana to monitor your application.
+   Set up Prometheus to monitor your application metrics.
 
    **Installing Prometheus:**
 
@@ -523,7 +522,7 @@ pipeline{
    You can access Prometheus in a web browser using your server's IP and port 9090:
 
    `http://<your-server-ip>:9090`
-
+   ---
    **Installing Node Exporter:**
 
    Create a system user for Node Exporter and download Node Exporter:
