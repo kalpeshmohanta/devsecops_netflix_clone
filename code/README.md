@@ -797,7 +797,7 @@ pipeline{
 
     `TAB: Status -> targets`
 
-    You can access Grafana for same.
+    **You can access Grafana for same**
 
 ## **Phase 5: Notification**
 
