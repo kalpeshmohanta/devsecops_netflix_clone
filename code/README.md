@@ -599,7 +599,7 @@ pipeline{
 
    **Prometheus Configuration:**
 
-   To configure Prometheus to scrape metrics from Node Exporter and Jenkins, you need to modify the `prometheus.yml` file. Here is an example `prometheus.yml` configuration for your setup:
+   To configure Prometheus to scrape metrics from Node Exporter, you need to modify the `prometheus.yml` file. Here is an example `prometheus.yml` configuration for your setup:
 
    **Location**
    ```
@@ -614,14 +614,9 @@ pipeline{
      - job_name: 'node_exporter'
        static_configs:
          - targets: ["<node-exporter-IP>:9100"]
-
-     - job_name: 'jenkins'
-       metrics_path: '/prometheus'
-       static_configs:
-         - targets: ["<your-jenkins-ip>:<your-jenkins-port>"]
    ```
 
-   Make sure to replace `<your-jenkins-ip>` and `<your-jenkins-port>` with the appropriate values for your Jenkins setup.
+   Make sure to replace `<node-exporter-IP>` and `<node-exporter-IP>` with the appropriate values for your Jenkins setup.
 
    Check the validity of the configuration file:
 
@@ -756,9 +751,53 @@ pipeline{
 
     That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
 
-    2. **Configure Prometheus Plugin Integration:**
+    **Step 11: Configure Prometheus Plugin Integration:**
         - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
+        - Install `prometheus` plugin in `Jenkins-server`
+        - Configure `prometheus` in `Jenkins-system`. Apply `apply & save(default-setting)`
 
+    To configure Prometheus to scrape metrics from Jenkins, you need to modify the `prometheus.yml` file. Here is an example `prometheus.yml` configuration for your setup:
+
+    **Location**
+    ```
+    cd /etc/prometheus
+    ```
+
+    ```yaml
+    global:
+        scrape_interval: 15s
+
+    .....
+    .....
+        - job_name: 'jenkins'
+        metrics_path: '/prometheus'
+        static_configs:
+            - targets: ["<your-jenkins-ip>:<your-jenkins-port>"]
+    ```    
+
+    Make sure to replace `<your-jenkins-ip>` and `<your-jenkins-port>` with the appropriate values for your Jenkins setup.
+
+    Check the validity of the configuration file:
+
+    ```bash
+    promtool check config /etc/prometheus/prometheus.yml
+    ```
+
+    Reload the Prometheus configuration without restarting:
+
+    ```bash
+    curl -X POST http://localhost:9090/-/reload
+    ```
+
+    You can access Prometheus targets at:
+
+    `http://<your-prometheus-ip>:9090/targets`
+
+    **OR**
+
+    `TAB: Status -> targets`
+
+    You can access Grafana for same.
 
 ## **Phase 5: Notification**
 
