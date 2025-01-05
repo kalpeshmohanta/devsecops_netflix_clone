@@ -334,6 +334,13 @@ Certainly, here are the instructions without step numbers:
   - Click "OK" to save your DockerHub credentials.
 
 Now, you have installed the Dependency-Check plugin, configured the tool, and added Docker-related plugins along with your DockerHub credentials in Jenkins. You can now proceed with configuring your Jenkins pipeline to include these tools and credentials in your CI/CD process.
+---
+-  Rights for Jenkins service to executes docker command.
+```sh
+sudo su
+sudo usermod -aG docker jenkins # Adds the Jenkins user to the Docker group
+sudo systemctl restart jenkins  # Restart Jenkins Server
+```
 
 ```groovy
 
@@ -413,17 +420,15 @@ pipeline{
 }
 ```
 
-```sh
-#If you get docker login failed errorr
-
-sudo su
-sudo usermod -aG docker jenkins # Adds the Jenkins user to the Docker group
-sudo systemctl restart jenkins  # Restart Jenkins Server
-```
-
-
 
 ## **Phase 4: Monitoring**
+
+| **Feature**         | **Prometheus**                                      | **Node Exporter**                              |
+|----------------------|-----------------------------------------------------|-----------------------------------------------|
+| **Primary Role**     | Monitoring, alerting, and time-series database.     | Collects and exports system-level metrics.    |
+| **Data Collection**  | Scrapes metrics from exporters (like Node Exporter).| Gathers hardware and OS-level metrics.        |
+| **Custom Metrics**   | Supports custom metrics from applications.          | Focuses on predefined system metrics.         |
+| **Purpose**          | Centralized metric storage, querying, and alerting. | Exposes raw node metrics for Prometheus.      |
 
 1. **Install Prometheus and Grafana:**
 
