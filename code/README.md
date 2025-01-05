@@ -423,12 +423,15 @@ pipeline{
 
 ## **Phase 4: Monitoring**
 
-| **Feature**         | **Prometheus**                                      | **Node Exporter**                              | **Grafana**                                   |
-|----------------------|-----------------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-| **Primary Role**     | Monitoring, alerting, and time-series database.     | Collects and exports system-level metrics.    | Visualization and dashboarding tool.          |
-| **Data Collection**  | Scrapes metrics from exporters (like Node Exporter).| Gathers hardware and OS-level metrics.        | Does not collect data; visualizes data from sources like Prometheus. |
-| **Custom Metrics**   | Supports custom metrics from applications.          | Focuses on predefined system metrics.         | Can visualize any metrics from supported data sources. |
-| **Purpose**          | Centralized metric storage, querying, and alerting. | Exposes raw node metrics for Prometheus.      | Creates interactive dashboards for monitoring and analysis. |
+
+| **Feature**         | **Node Exporter**                              | **Prometheus**                                      | **Grafana**                                   |
+|----------------------|-----------------------------------------------|-----------------------------------------------------|-----------------------------------------------|
+| **Primary Role**     | Collects and exports system-level metrics.    | Monitoring, alerting, and time-series database.     | Visualization and dashboarding tool.          |
+| **Data Collection**  | Gathers hardware and OS-level metrics.        | Scrapes metrics from exporters (like Node Exporter).| Does not collect data; visualizes data from sources like Prometheus. |
+| **Custom Metrics**   | Focuses on predefined system metrics.         | Supports custom metrics from applications.          | Can visualize any metrics from supported data sources. |
+| **Purpose**          | Exposes raw node metrics for Prometheus.      | Centralized metric storage, querying, and alerting. | Creates interactive dashboards for monitoring and analysis. |
+
+
 1. **Install Prometheus:**
 
    Set up Prometheus to monitor your application metrics.
