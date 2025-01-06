@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: netflix-app
-        image: nasi101/netflix:latest
+        image: kalpeshmohanta/netflix:latest # Replace with your own DockerHub Image
         ports:
         - containerPort: 80
