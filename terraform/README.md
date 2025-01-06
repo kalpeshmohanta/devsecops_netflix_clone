@@ -38,10 +38,10 @@
      - Volume Type: `gp2`.
      - Enable Delete on Termination.
 
-5. **Elastic IP**:
+   **Elastic IP**:
    - Allocate and associate an Elastic IP to the EC2 instance.
 
-6. **EC2 Instance for monitoring** 
+5. **EC2 Instance for monitoring** 
    
    - Using same VPC & Subnet from `Jenkins Instance`
    ---
@@ -55,8 +55,11 @@
      - Volume Type: `gp2`.
      - Enable Delete on Termination.
 
-5. **Elastic IP**:
+   **Elastic IP**:
    - Allocate and associate an Elastic IP to the EC2 instance.
+
+6. **EKS for Deployment**
+   - All the configuration in `eks` directory.
 
 ### Comments:
 - Use variables for parameters like region, instance type, and volume size for flexibility.
