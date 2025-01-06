@@ -16,6 +16,9 @@ module "vpc" {
   single_nat_gateway   = true      # Uses just one NAT Gateway (saves cost)
   enable_dns_hostnames = true      # Enables DNS hostnames in the VPC
   enable_dns_support   = true      # Enables DNS support in the VPC
+  
+  # Enable auto-assign public IPs in public subnets
+  map_public_ip_on_launch = true
 
 
   tags = {
