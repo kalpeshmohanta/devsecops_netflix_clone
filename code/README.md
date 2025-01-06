@@ -832,6 +832,8 @@ Prometheus is a powerful monitoring and alerting toolkit, and you'll use it to m
 
 #### Install Node Exporter using Helm
 
+Install `Helm` from [Official Doc, Windows: Winget](https://helm.sh/docs/intro/install/)
+
 To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node Exporter. This component allows you to collect system-level metrics from your cluster nodes. Here are the steps to install the Node Exporter using Helm:
 
 1. Add the Prometheus Community Helm repository:
