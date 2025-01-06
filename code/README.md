@@ -803,6 +803,8 @@ pipeline{
 
 1. **Implement Notification Services:**
     - Set up email notifications in Jenkins or other notification mechanisms.
+    - [Youtube Reference](https://www.youtube.com/watch?v=diagLJuF2eI&list=PLCa6bswf5ERFsTZrbtTmhctDg8t5lVhOp&index=9)
+
 
 ## **Phase 6: Kubernetes**
 
