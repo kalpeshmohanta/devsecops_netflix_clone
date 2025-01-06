@@ -15,13 +15,28 @@ module "eks" {
   cluster_name    = local.cluster_name
   cluster_version = var.kubernetes_version
   subnet_ids      = module.vpc.private_subnets
+  vpc_id          = module.vpc.vpc_id
 
+
+
+  # Enable public access to the cluster endpoint
+  cluster_endpoint_public_access = true
+  
+  # Optionally restrict access to specific IPs
+  cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]  # Be careful with this in production
+  
+  # Enable private access as well for nodes
+  cluster_endpoint_private_access = true
+
+
+
+  # Enable cluster creator admin permissions (IAM ROOT User)
+  enable_cluster_creator_admin_permissions = true
 
   # Enable IAM Roles for Service Accounts(IRSA), which allow K8s service accounts to access AWS IAM roles
-  enable_irsa = true  
+  enable_irsa = true
 
-
-  vpc_id = module.vpc.vpc_id
+  
 
   eks_managed_node_group_defaults = {
     ami_type               = "AL2_x86_64"
@@ -37,5 +52,6 @@ module "eks" {
       max_size     = 3
     }
   }
+  
 }
 
