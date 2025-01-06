@@ -808,19 +808,19 @@ pipeline{
 
 ## **Phase 6: Kubernetes**
 
-**Prerequist**
-    - Install `kubectl` from [Official Documentation](https://kubernetes.io/docs/tasks/tools/)
-    - [Youtube Reference](https://www.youtube.com/watch?v=G9MmLUsBd3g)
+**Prerequisite**
+   - Install `kubectl` from [Official Documentation](https://kubernetes.io/docs/tasks/tools/)
+   - [Youtube Reference](https://www.youtube.com/watch?v=G9MmLUsBd3g)
 
-**Set Up `kubeconfig`**
-    - `kubeconfig` file contains the connection details and credentials for your Kubernetes cluster. This file is typically located at `~/.kube/config`. For Window: `%USERPROFILE%\.kube\config`
+**Set Up:**`kubeconfig`
+   - `kubeconfig` file contains the connection details and credentials for your Kubernetes cluster. This file is typically located at `~/.kube/config`. 
+   - For Window: `%USERPROFILE%\.kube\config`
 
-    - Cloud-based Cluster (EKS):
+   - Cloud-based Cluster (EKS):
         - Amazon EKS:
         ```bash
         aws eks update-kubeconfig --region <region> --name <cluster-name>
         ````
-
 
 ### Create Kubernetes Cluster with Nodegroups
 
